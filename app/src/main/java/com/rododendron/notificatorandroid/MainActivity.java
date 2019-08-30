@@ -2,20 +2,26 @@ package com.rododendron.notificatorandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
-private Toolbar toolbar;
+    private static  final int LAYOUT = R.layout.activity_main;
+
+    private Toolbar toolbar;
+    private DrawerLayout drawerLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.AppDefoult);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(LAYOUT);
 
         initToolbar();
+        initNavigationView();
     }
 
     private void initToolbar() {
@@ -28,5 +34,10 @@ private Toolbar toolbar;
         }
     });
     toolbar.inflateMenu(R.menu.menu);
+    }
+
+    private void initNavigationView() {
+    drawerLayout = findViewById(R.id.drawerLayout);
+
     }
 }
