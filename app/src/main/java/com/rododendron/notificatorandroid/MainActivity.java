@@ -7,13 +7,12 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
-import com.rododendron.notificatorandroid.adapter.TabsPagerFragmentAdapter;
+import com.rododendron.notificatorandroid.adapter.TabsFragmentAdapter;
 
 public class MainActivity extends AppCompatActivity {
     private static  final int LAYOUT = R.layout.activity_main;
@@ -47,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initTabLayout() {
         viewPager = findViewById(R.id.viewPager);
-        TabsPagerFragmentAdapter adapter = new TabsPagerFragmentAdapter(getSupportFragmentManager());
+        TabsFragmentAdapter adapter = new TabsFragmentAdapter(getSupportFragmentManager(),this);
         viewPager.setAdapter(adapter);
 
         TabLayout tabLayout;

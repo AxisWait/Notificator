@@ -1,5 +1,6 @@
 package com.rododendron.notificatorandroid.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,20 +8,20 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import com.rododendron.notificatorandroid.R;
 
-public class ExampleFragment extends Fragment {
+public class HistoryFragment extends AbstructTabFragment {
     private static  final int LAYOUT = R.layout.fragment_example;
-    private View view;
 
-   public static ExampleFragment getInstance(){
-    Bundle args = new Bundle();
-    ExampleFragment fragment = new ExampleFragment();
-    fragment.setArguments(args);
-    return fragment;
-   }
+    public static HistoryFragment getInstance(Context context){
+        Bundle args = new Bundle();
+        HistoryFragment fragment = new HistoryFragment();
+        fragment.setArguments(args);
+        fragment.setContext(context);
+        fragment.setTitle(context.getString(R.string.tab_history));
+        return fragment;
+    }
 
     @Nullable
     @Override
@@ -28,4 +29,10 @@ public class ExampleFragment extends Fragment {
         view = inflater.inflate(LAYOUT,container,false);
         return view;
     }
+
+
+    public void setContext(Context context) {
+        this.context = context;
+    }
+
 }

@@ -4,4 +4,8 @@
     <string name="menu_item_notification">Reminders</string>
     <string name="view_navigation_open">Open</string>
     <string name="view_navigation_close">Close</string>
+    <string name="tab_history">HISTORY</string>
+    <string name="tab_ideas">Ideas</string>
+    <string name="tab_todo">TODO</string>
+    <string name="tab_birthday">Birthday</string>
 </resources>
